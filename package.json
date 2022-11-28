@@ -9,8 +9,8 @@
   "scripts": {
     "clean": "rimraf ./dist",
     "prebuild": "npm run clean",
-    "build:ts":"tsc",
-    "build:other":"cpx ./src/**/*.{html,css} ./dist",
+    "build:ts": "tsc",
+    "build:other": "cpx ./src/**/*.{html,css} ./dist",
     "build": "npm run build:ts && npm run build:other"
   },
   "workspaces": [
@@ -23,6 +23,7 @@
   ],
   "author": "Sondre Tveit Ernoe",
   "license": "MIT",
+  "main": "dist/index.js",
   "devDependencies": {
     "@types/jsdom": "^20.0.1",
     "@types/node": "^18.11.9",
