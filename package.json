@@ -24,8 +24,8 @@
   "author": "Sondre Tveit Ernoe",
   "license": "MIT",
   "devDependencies": {
-    "@types/jsdom": "^16.2.14",
-    "@types/node": "^16.11.36",
+    "@types/jsdom": "^20.0.1",
+    "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
     "cpx2": "^4.1.1",
