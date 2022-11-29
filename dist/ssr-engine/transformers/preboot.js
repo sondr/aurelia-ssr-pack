@@ -56,8 +56,8 @@ function default_1(html, transformerCtx, options) {
                 { selector: 'button:not([type="submit"])', events: ['click'], preventDefault: true, freeze: true }
             ]
         }, options.prebootOptions);
-        const inlinePrebootCode = preboot.getInlineDefinition(prebootOptions);
-        //const inlinePrebootCode = preboot.getInlineCode(prebootOptions); // v.4
+        //const inlinePrebootCode = preboot.getInlineDefinition(prebootOptions); 
+        const inlinePrebootCode = preboot.getInlineCode(prebootOptions); // v.4
         html = (0, utils_1.replaceString)(html, '</head>', `\r\n<script>${inlinePrebootCode}</script>\r\n</head>`);
         // preboot_browser can replay events that were stored by the preboot code
         html = (0, utils_1.replaceString)(html, '</body>', `\r\n<script src="preboot_browser.js"></script>
