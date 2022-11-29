@@ -1,1 +1,1 @@
-{"version":3,"file":"middleware-koa.d.ts","sourceRoot":"","sources":["../../src/middleware-koa.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,wBAAwB,EAAU,MAAM,cAAc,CAAC;AAG/E,eAAO,MAAM,oBAAoB,kBAAmB,aAAa,yBAAyB,wBAAwB,0BAClF,MAAM,IAAI,yBAuBzC,CAAC"}
+{"version":3,"file":"middleware-koa.d.ts","sourceRoot":"","sources":["../../src/middleware-koa.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,wBAAwB,EAAU,MAAM,iCAAiC,CAAC;AAGlG,eAAO,IAAI,oBAAoB,kBAAmB,aAAa,yBAAyB,wBAAwB,0BAChF,MAAM,IAAI,yBAuBzC,CAAC"}

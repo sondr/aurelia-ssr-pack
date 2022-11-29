@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.aureliaKoaMiddleware = void 0;
-const ssr_engine_1 = require("./ssr-engine");
-const aureliaKoaMiddleware = (renderOptions, initializationOptions) => {
+const aurelia_ssr_engine_1 = require("./ssr-engine/aurelia-ssr-engine");
+let aureliaKoaMiddleware = (renderOptions, initializationOptions) => {
     return (ctx, next) => {
         const url = ctx.request.URL;
         const pathname = url.pathname;
@@ -13,7 +13,7 @@ const aureliaKoaMiddleware = (renderOptions, initializationOptions) => {
         }
         // set client request headers
         renderOptions.headers = Object.assign({}, ctx.req.headers);
-        return (0, ssr_engine_1.render)(Object.assign({ url }, renderOptions), initializationOptions)
+        return (0, aurelia_ssr_engine_1.render)(Object.assign({ url }, renderOptions), initializationOptions)
             .then((html) => {
             ctx.body = html;
         })

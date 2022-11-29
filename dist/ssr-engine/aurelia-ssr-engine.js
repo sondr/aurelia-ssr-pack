@@ -55,4 +55,4 @@ function start(options, requestUrl, headers) {
     PLATFORM.jsdom.reconfigure({ url: requestUrl });
     return typeof headers !== 'undefined' ? start(headers) : start();
 }
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=aurelia-ssr-engine.js.map

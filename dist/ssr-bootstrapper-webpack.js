@@ -23,7 +23,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.bootstrapper = void 0;
 const aurelia_framework_1 = require("aurelia-framework");
 const aurelia_loader_webpack_1 = require("aurelia-loader-webpack");
 const aurelia_binding_1 = require("aurelia-binding");
@@ -72,17 +71,7 @@ function stop() {
     //require('aurelia-pal-nodejs').reset(pal.DOM.global.window);
     palNodeJS.reset(pal.DOM.global.window);
 }
-const bootstrapper = function (configure) {
-    return {
-        initialize,
-        stop,
-        start: function (headers) {
-            return start(configure, headers);
-        }
-    };
-};
-exports.bootstrapper = bootstrapper;
-// export default function (configure: any) {
+// export const bootstrapper = function (configure: any) {
 //     return {
 //         initialize,
 //         stop,
@@ -91,4 +80,15 @@ exports.bootstrapper = bootstrapper;
 //         }
 //     };
 // };
+function default_1(configure) {
+    return {
+        initialize,
+        stop,
+        start: function (headers) {
+            return start(configure, headers);
+        }
+    };
+}
+exports.default = default_1;
+;
 //# sourceMappingURL=ssr-bootstrapper-webpack.js.map
