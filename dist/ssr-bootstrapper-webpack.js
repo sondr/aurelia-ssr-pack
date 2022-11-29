@@ -36,9 +36,10 @@ aurelia_binding_1.DirtyCheckProperty.prototype.subscribe = () => { };
 global.Element = typeof Element === 'undefined' ? () => { } : Element;
 global.HTMLElement = typeof HTMLElement === 'undefined' ? () => { } : HTMLElement;
 global.HTMLSelectElement = typeof HTMLSelectElement === 'undefined' ? () => { } : HTMLSelectElement;
-//const palNodeJS = require('aurelia-pal-nodejs');
 const palNodeJS = __importStar(require("./pal-nodejs/index"));
-const pal = require('aurelia-pal');
+//const palNodeJS = require('aurelia-pal-nodejs');
+//const pal = require('aurelia-pal');
+const pal = require("aurelia-pal");
 function initialize() {
     const { initialize } = palNodeJS;
     const { PLATFORM } = pal;

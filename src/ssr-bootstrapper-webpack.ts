@@ -13,9 +13,11 @@ DirtyCheckProperty.prototype.subscribe = () => { };
 (<any>global).HTMLElement = typeof HTMLElement === 'undefined' ? () => { } : HTMLElement;
 (<any>global).HTMLSelectElement = typeof HTMLSelectElement === 'undefined' ? () => { } : HTMLSelectElement;
 
+import * as palNodeJS from './pal-nodejs/index';
 //const palNodeJS = require('aurelia-pal-nodejs');
-import * as  palNodeJS from './pal-nodejs/index';
-const pal = require('aurelia-pal');
+
+//const pal = require('aurelia-pal');
+import pal = require('aurelia-pal');
 
 function initialize() {
     const { initialize } = palNodeJS;
@@ -32,17 +34,17 @@ function initialize() {
 function start(configure: any, headers?: any) {
     const aurelia = new Aurelia(new WebpackLoader());
 
-    aurelia.host = pal.DOM.querySelectorAll('body')[0];
+    aurelia.host = pal.DOM.querySelectorAll('body')[0] as HTMLBodyElement;
 
     const attribute = pal.DOM.createAttribute('aurelia-app');
     attribute.value = 'main';
     aurelia.host.attributes.setNamedItem(attribute);
-
+    
     return new Promise(resolve => {
         // we need to wait for aurelia-composed as otherwise
         // the router hasn't been fully initialized and 
         // generated routes by route-href will be undefined
-        pal.DOM.global.window.addEventListener('aurelia-composed', () => {
+        ((pal.DOM as any).global as typeof globalThis).window.addEventListener('aurelia-composed', () => {
             setTimeout(() => {
                 resolve({ aurelia, pal, palNodeJS, stop });
             }, 20);
@@ -55,7 +57,7 @@ function start(configure: any, headers?: any) {
 function stop() {
     require('aurelia-pal').reset();
     //require('aurelia-pal-nodejs').reset(pal.DOM.global.window);
-    palNodeJS.reset(pal.DOM.global.window);
+    palNodeJS.reset(((pal.DOM as any).global as typeof globalThis).window);
 }
 
 export const bootstrapper = function (configure: any) {

@@ -24,7 +24,9 @@ function render(options: RenderOptions, initOptions: AppInitializationOptions) {
     // we'll want new instances of aurelia-pal and aurelia-pal-nodejs
     // because aurelia-pal holds the reference to the DOM
     delete require.cache[require.resolve('aurelia-pal')];
-    delete require.cache[require.resolve('aurelia-pal-nodejs')];
+    delete require.cache[require.resolve('../pal-nodejs/index')];
+    
+    //delete require.cache[require.resolve('aurelia-pal-nodejs')];
 
     return start(initOptions, options.url.toString(), options.headers)
         .then((ctx: { aurelia: Aurelia, pal: AureliaPal, palNodeJS: AureliaPalNodeJS, stop: () => void }) => {

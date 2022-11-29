@@ -4,7 +4,7 @@
         "outDir": "./dist",
         "declarationDir": "./dist/types",
         "tsBuildInfoFile": "./dist/.tsbuildinfo",
-        "target": "es2018",
+        "target": "ES2015",
         "module": "CommonJS",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,

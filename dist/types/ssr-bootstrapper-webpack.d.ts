@@ -1,5 +1,6 @@
+import pal = require('aurelia-pal');
 declare function initialize(): {
-    PLATFORM: any;
+    PLATFORM: pal.Platform;
 };
 declare function stop(): void;
 export declare const bootstrapper: (configure: any) => {
