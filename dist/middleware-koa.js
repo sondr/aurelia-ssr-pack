@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.aureliaKoaMiddleware = void 0;
 const aurelia_ssr_engine_1 = require("./ssr-engine/aurelia-ssr-engine");
-let aureliaKoaMiddleware = (renderOptions, initializationOptions) => {
+exports.default = (renderOptions, initializationOptions) => {
     return (ctx, next) => {
         const url = ctx.request.URL;
         const pathname = url.pathname;
@@ -24,5 +23,4 @@ let aureliaKoaMiddleware = (renderOptions, initializationOptions) => {
         });
     };
 };
-exports.aureliaKoaMiddleware = aureliaKoaMiddleware;
 //# sourceMappingURL=middleware-koa.js.map

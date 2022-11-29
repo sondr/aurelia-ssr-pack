@@ -1,7 +1,7 @@
 import { RenderOptions, AppInitializationOptions, render } from './ssr-engine/aurelia-ssr-engine';
 import { Context } from 'koa';
 
-export let aureliaKoaMiddleware = (renderOptions: RenderOptions, initializationOptions: AppInitializationOptions) => {
+export default (renderOptions: RenderOptions, initializationOptions: AppInitializationOptions) => {
     return (ctx: Context, next: () => void) => {
         const url = (ctx.request as any).URL;
         const pathname = url.pathname;
