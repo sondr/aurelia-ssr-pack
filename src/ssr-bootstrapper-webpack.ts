@@ -58,7 +58,7 @@ function stop() {
     palNodeJS.reset(pal.DOM.global.window);
 }
 
-export default function (configure: any) {
+export const bootstrapper = function (configure: any) {
     return {
         initialize,
         stop,
@@ -67,3 +67,13 @@ export default function (configure: any) {
         }
     };
 };
+
+// export default function (configure: any) {
+//     return {
+//         initialize,
+//         stop,
+//         start: function (headers?: any) {
+//             return start(configure, headers);
+//         }
+//     };
+// };
