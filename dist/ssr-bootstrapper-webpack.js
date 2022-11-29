@@ -23,6 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.bootstrapper = void 0;
 const aurelia_framework_1 = require("aurelia-framework");
 const aurelia_loader_webpack_1 = require("aurelia-loader-webpack");
 const aurelia_binding_1 = require("aurelia-binding");
@@ -80,7 +81,7 @@ function stop() {
 //         }
 //     };
 // };
-function default_1(configure) {
+function bootstrapper(configure) {
     return {
         initialize,
         stop,
@@ -89,6 +90,6 @@ function default_1(configure) {
         }
     };
 }
-exports.default = default_1;
+exports.bootstrapper = bootstrapper;
 ;
 //# sourceMappingURL=ssr-bootstrapper-webpack.js.map

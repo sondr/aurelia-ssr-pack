@@ -70,7 +70,7 @@ function stop() {
 //     };
 // };
 
-export default function (configure: any) {
+export function bootstrapper(configure: any) {
     return {
         initialize,
         stop,

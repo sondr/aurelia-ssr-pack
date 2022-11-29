@@ -3,7 +3,7 @@ declare function initialize(): {
     PLATFORM: pal.Platform;
 };
 declare function stop(): void;
-export default function (configure: any): {
+export declare function bootstrapper(configure: any): {
     initialize: typeof initialize;
     stop: typeof stop;
     start: (headers?: any) => Promise<unknown>;
