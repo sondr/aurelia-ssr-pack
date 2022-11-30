@@ -4,6 +4,7 @@ exports.render = void 0;
 require("./reflect");
 require("./property-descriptor");
 const transformers_1 = require("./transformers");
+const aurelia_framework_1 = require("aurelia-framework");
 const cleanup_1 = require("./cleanup");
 function render(options, initOptions) {
     if (!options.url) {
@@ -22,7 +23,7 @@ function render(options, initOptions) {
     // we'll want new instances of aurelia-pal and aurelia-pal-nodejs
     // because aurelia-pal holds the reference to the DOM
     delete require.cache[require.resolve('aurelia-pal')];
-    delete require.cache[require.resolve('../pal-nodejs/index')];
+    delete require.cache[require.resolve(aurelia_framework_1.PLATFORM.moduleName('../pal-nodejs/index'))];
     //delete require.cache[require.resolve('aurelia-pal-nodejs')];
     return start(initOptions, options.url.toString(), options.headers)
         .then((ctx) => {
