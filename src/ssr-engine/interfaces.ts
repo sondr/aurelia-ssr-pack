@@ -54,8 +54,10 @@ export interface AppInitializationOptions {
     main: () => {
         initialize: () => { PLATFORM: any },
         start: (headers?: any) => Promise<{
-            aurelia: Aurelia, pal: AureliaPal,
-            palNodeJS: AureliaPalNodeJS, stop: () => void
+            aurelia: Aurelia,
+            pal: AureliaPal,
+            palNodeJS: AureliaPalNodeJS,
+            stop: () => void
         }>,
         stop: () => Promise<void>
     };
