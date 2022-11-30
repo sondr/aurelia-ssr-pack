@@ -1,8 +1,10 @@
 import './reflect';
 import './property-descriptor';
+
+//import * as palNodeJS from '../pal-nodejs';
 import { RenderOptions, AppInitializationOptions, AureliaPalNodeJS, AureliaPal } from './interfaces';
 import { transform } from './transformers';
-import { Aurelia, PLATFORM } from 'aurelia-framework';
+import { Aurelia } from 'aurelia-framework';
 import { cleanup } from './cleanup';
 
 function render(options: RenderOptions, initOptions: AppInitializationOptions) {
@@ -23,8 +25,11 @@ function render(options: RenderOptions, initOptions: AppInitializationOptions) {
 
     // we'll want new instances of aurelia-pal and aurelia-pal-nodejs
     // because aurelia-pal holds the reference to the DOM
-    delete require.cache[require.resolve('aurelia-pal')];
-    delete require.cache[require.resolve(PLATFORM.moduleName('../pal-nodejs/index'))];
+    delete require.cache[require('aurelia-pal')];
+    delete require.cache[require('../pal-nodejs')];
+
+    // delete require.cache[require.resolve('aurelia-pal')];
+    // delete require.cache[require.resolve('../pal-nodejs')];
     
     //delete require.cache[require.resolve('aurelia-pal-nodejs')];
 

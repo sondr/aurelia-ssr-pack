@@ -13,7 +13,7 @@ DirtyCheckProperty.prototype.subscribe = () => { };
 (<any>global).HTMLElement = typeof HTMLElement === 'undefined' ? () => { } : HTMLElement;
 (<any>global).HTMLSelectElement = typeof HTMLSelectElement === 'undefined' ? () => { } : HTMLSelectElement;
 
-import * as palNodeJS from './pal-nodejs/index';
+const palNodeJS = require('./pal-nodejs');
 //const palNodeJS = require('aurelia-pal-nodejs');
 
 //const pal = require('aurelia-pal');
@@ -56,7 +56,7 @@ function start(configure: any, headers?: any) {
 
 function stop() {
     require('aurelia-pal').reset();
-    //require('aurelia-pal-nodejs').reset(pal.DOM.global.window);
+    require('./pal-nodejs').reset(((pal.DOM as any).global as typeof globalThis).window);
     palNodeJS.reset(((pal.DOM as any).global as typeof globalThis).window);
 }
 

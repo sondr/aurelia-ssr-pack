@@ -11,7 +11,7 @@ import { JSDOM } from 'jsdom';
 export function buildPal(): { global: IGlobal, platform: IPlatform, dom: IDom, feature: IFeature } {
   // https://github.com/jsdom/jsdom/issues/2304
   // set url to enable global var localStorage and sessionStorage
-  var jsdom = new JSDOM(undefined, {url: "http://localhost/"});
+  var jsdom = new JSDOM(undefined, { url: "http://localhost/" });
   var global: IGlobal = <IGlobal>jsdom.window;
 
   ensurePerformance(global.window);
